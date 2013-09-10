@@ -1,0 +1,37 @@
+{
+  "name": "awesome",
+  "display": "Awesome",
+  "description": "Gets orders from an Amazon seller account to import into a Spree store",
+  "consumers": [
+  {
+    "name": "get_orders",
+    "path": "/get_orders",
+    "description": "Get orders from Amazon",
+    "requires": {
+      "parameters": [
+      {
+        "name": "aws_access_key",
+        "description": "AWS Access Key ID",
+        "data_type": "string"
+      },
+      {
+        "name": "foo_key",
+        "description": "FOO ID",
+        "data_type": "string"
+      }
+      ]
+    },
+    "recommends": {
+      "keys": ["amazon:order:poll"]
+    },
+    "produces": {
+      "messages": [
+      {
+        "message": "spree:import:order",
+        "schema": "/spree.import.order.json"
+      }
+      ]
+    }
+  }
+  ]
+}

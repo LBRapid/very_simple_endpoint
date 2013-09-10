@@ -1,4 +1,3 @@
-require 'sinatra'
 require 'endpoint_base'
 
 class SimpleEndpoint < EndpointBase

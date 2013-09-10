@@ -1,5 +1,7 @@
-require './simple_endpoint'
 require 'rubygems'
 require 'bundler'
 
-run Sinatra::Application
+Bundler.require(:default)
+require './simple_endpoint'
+
+run SimpleEndpoint
